@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #cecece;
+        }
+
+        .container {
+            width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content h2 {
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .content p {
+            padding: 20px;
+        }
+
+        #main {
+            background-color: teal;
+            color: #fff;
+        }
+
+        #second {
+            background-color: coral;
+            color: #fff;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            transform: translateX(-500px);
+            transition: transform 0.3s cubic-bezier(.47,1.05,.77,-0.23);
+        }
+
+        .container:hover #second {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content" id="main">
+        <h2>Main</h2>
+        <p>The last time you had a cheeseburger was too long ago. Try not to drool when you think about the slightly charred, medium-rare meat nestled between soft brioche, cradled in crisp iceberg lettuce and flavour amplifying condiments. Why are you still reading this- go get a cheeseburger.</p>
+    </div>
+    <div class="content" id="second">
+        <h2>Second</h2>
+        <p>The last time you had a cheeseburger was too long ago. Try not to drool when you think about the slightly charred, medium-rare meat nestled between soft brioche, cradled in crisp iceberg lettuce and flavour amplifying condiments. Why are you still reading this- go get a cheeseburger.</p>
+    </div>
+</div>
+</body>
+</html>

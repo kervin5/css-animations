@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #header {
+            background-color: crimson;
+        }
+
+        #header a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            padding: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #header a:hover {
+            background-color: rgba(0,0,0,.1);
+        }
+
+        #main-nav {
+            text-align: right;
+        }
+
+        #main-nav li {
+            display: inline-block;
+        }
+
+        #second-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            border: 1px solid #fff;
+            background-color: crimson;
+            min-height: 100vh;
+            box-shadow: 0 0 0 rgba(0,0,0,.2);
+            transition: transform 0.3s cubic-bezier(.47,1.05,.77,-0.23);
+            transform: translateX(-400px);
+        }
+
+        #second-nav a {
+            display: block;
+        }
+
+        #nav-toggle {
+            background-color: rgba(0,0,0,.3);
+            min-height: 40px;
+            position: absolute;
+            top: 10px;
+            right: -55px;
+            width: 50px;
+            padding: 2px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #nav-toggle span {
+            height: 3px;
+            width: 40px;
+            background-color: white;
+            display: block;
+            position: absolute;
+            top: 45%;
+            left: 10%;
+        }
+
+        #nav-toggle span:before {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: white;
+            display: block;
+            position: relative;
+            top: -10px;
+        }
+
+        #nav-toggle span:after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: white;
+            display: block;
+            position: relative;
+            top: 8px;
+        }
+
+        #header.open #second-nav{
+            transform: translateX(0);
+        }
+
+        #header.open #nav-toggle {
+            transform: scale(0.8);
+        }
+    </style>
+
+</head>
+<body>
+<header id="header">
+    <nav id="main-nav">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </nav>
+    <nav id="second-nav">
+        <div id="nav-toggle">
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="">Category 1</a></li>
+            <li><a href="">Category 2</a></li>
+            <li><a href="">Category 3</a></li>
+        </ul>
+    </nav>
+</header>
+<script>
+    let toggle = document.getElementById('nav-toggle');
+
+    toggle.addEventListener('click',function (ev) {
+
+        let header = document.getElementById('header');
+
+        var open = document.getElementsByClassName('open');
+
+        if(open.length <= 0) {
+            header.setAttribute('class','open');
+        }else {
+            header.setAttribute('class','');
+        }
+    });
+</script>
+</body>
+</html>
